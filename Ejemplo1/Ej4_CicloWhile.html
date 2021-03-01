@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Uso While</title>
+    <style>
+        body{
+            background-color: aqua;
+            color: brown;
+            font-size: 25;
+            font-style: oblique;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>EJEMPLO USO CICLO WHILE (MIENTRAS)</h1>
+        <br>
+        <h3>Aplicación que pide serie de números y realiza la suma de 1 hasta el número digitado</h3>
+        <hr>
+        <br>
+        <table border="5">
+            <th>Numeros Digitados</th><th>Suma</th>
+            <tbody id="cuerpo">
+
+            </tbody>
+        </table>
+    </center>
+    <script>
+        var salida='';
+        var num = parseInt(prompt('DIGITE UN NÚMERO, 0 ARA TERMINAR',''));
+        while(num != 0){
+            var sum=0;
+            for(var i=1; i<=num;i++){
+              sum+=i;
+            }
+            salida+='<tr><td>'+num+'</td><td>'+sum+'</td></tr>';
+            num =parseInt(prompt('DIGITE UN NÚMERO, 0 ARA TERMINAR',''));
+        }
+        document.getElementById('cuerpo').innerHTML=salida;
+    </script>
+    
+</body>
+</html>

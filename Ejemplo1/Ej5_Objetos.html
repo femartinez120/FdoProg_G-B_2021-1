@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Objetos</title>
+    <style>
+        body{
+            background-color: aquamarine;
+            color: black;
+            font-style: italic;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>EJEMPLO MANEJO DE ESTRUCTURA DE DATOS OBJETOS</h1>
+        <hr>
+        <br>
+        <table border="5">
+            <th>Descripción</th><th>Valor</th>
+            <tbody>
+                <tr>
+                    <td> Nombres</td>
+                    <td><input type="text" name="nom" id="nom" autofocus></td>
+                </tr>
+                <tr>
+                    <td> Apellidos</td>
+                    <td><input type="text" name="ape" id="ape"></td>
+                </tr> 
+                <tr>
+                    <td> Nota 1</td>
+                    <td><input type="text" name="n1" id="n1"></td>
+                </tr>
+                <tr>
+                    <td> Nota 2</td>
+                    <td><input type="text" name="n2" id="n2"></td>
+                </tr> 
+                <tr>
+                    <td> Nota 3</td>
+                    <td><input type="text" name="n3" id="n3"></td>
+                </tr>     
+            </tbody>
+        </table>
+        <table border="5">
+            <tbody><tr><td><button onclick="agregar()">AGREGAR</button></td></tr></tbody>
+        </table>
+        <br>
+        <h2>Listado de Estudiantes</h2>
+        <table border="5">
+            <th>Nombre</th><th>Apellidos</th><th>Nota 1</th><th>Nota 2</th><th>Nota 3</th><th>Nota Final</th>
+            <tbody id="cuerpo">
+
+            </tbody>
+        </table>
+    </center>
+    <script>
+        function agregar(){
+            var est=Object();
+            est.nom=document.getElementById('nom').value;
+            est.ape=document.getElementById('ape').value;
+            est.n1= parseFloat(document.getElementById('n1').value);
+            est.n2= parseFloat(document.getElementById('n2').value);
+            est.n3= parseFloat(document.getElementById('n3').value);
+            console.log(est);
+            var salida='<tr><td>'+est.nom+'</td><td>'+est.ape+'</td><td>'+est.n1+'</td><td>'+est.n2+'</td><td>'+est.n3+'</td><td>'+nf(est.n1,est.n2,est.n3)+'</td></tr>';
+            document.getElementById('cuerpo').innerHTML=salida;
+            limpiarCajas();
+        }
+        function nf(n1,n2,n3){
+            return (n1+n2+n3)/3;
+        }
+        function limpiarCajas(){
+            document.getElementById('nom').value='';
+            document.getElementById('ape').value='';
+            document.getElementById('n1').value='';
+            document.getElementById('n2').value='';
+            document.getElementById('n3').value='';
+            document.getElementById('nom').focus();
+
+        }
+    </script>
+    
+</body>
+</html>
