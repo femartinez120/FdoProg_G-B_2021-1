@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos Manejo de Array</title>
+    <style>
+        body{
+            background-color: burlywood;
+            color: black;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: oblique;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var myArray = Array();
+        console.log(myArray);
+        var miArray= [];
+        miArray.push('La noche esta estrellda');
+        console.log(miArray);
+        var mArray = new Array();
+        console.log(mArray);
+        var arrai= new Array(100);
+        console.log(arrai);
+        myArray.push(50); // insertar un dato 
+        myArray.push(45);
+        myArray[4]=364;
+        console.log(myArray);
+        var miOtroarray=[1,"JUAN",{"modelo":1920,"marca":"suzuki"},['Lucia','obeliza','es de noche']];
+        console.log(miOtroarray);
+        console.log(miOtroarray[0]);
+        console.log(miOtroarray[2]);
+        console.log(miOtroarray[3]);
+        console.log(miOtroarray[3][1]);
+        console.log(miOtroarray[1]+' Tiene un Vehiculo marca '+ miOtroarray[2].marca+' modelo '+miOtroarray[2].modelo);
+    </script>
+</body>
+</html>
